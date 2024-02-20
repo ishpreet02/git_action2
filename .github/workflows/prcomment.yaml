@@ -5,7 +5,7 @@ jobs:
     comment:
         runs-on: ubuntu-latest
         permissions:
-            pull_requests: write
+            pull-requests: write
         steps:
             - name: Checkout
               uses: actions/checkout@v3
