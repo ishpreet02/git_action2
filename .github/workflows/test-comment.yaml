@@ -1,0 +1,17 @@
+name: Add comment
+on:
+  pull_request:
+  
+jobs:
+  add-comment:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Add comment
+        run: gh issue comment "$NUMBER" --body "$BODY"
+        env:
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          BODY: >
+            atlantis plan
